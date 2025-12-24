@@ -1,6 +1,9 @@
 # WuzzApp
 Control WhatsApp using Tasker.
 
+## Warning
+This project is for educational and experimental purposes only. Misuse may violate WhatsApp’s terms of service and could result in account restrictions or bans. Use at your own risk; the author is not responsible for any damage, data loss, or account issues arising from its use.
+
 ## Prerequisites
 - [Termux](https://f-droid.org/repo/com.termux_1022.apk)
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
