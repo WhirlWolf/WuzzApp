@@ -59,7 +59,7 @@ TZ=timezone_here
 WEBHOOK_FORMAT=json
 ```
 - run `mv .env.sample .env`
-	- run `nano .env`
+- run `nano .env`
 	- do Alt + A   (start select)
 		then Alt + /   (go to end)
 		then Ctrl + K  (cut all)
