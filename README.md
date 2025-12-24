@@ -35,17 +35,17 @@ termux-reload-settings
 - [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
 
 #### Link device
- - goto http://localhost:8080/dashboard/
+- Go to http://localhost:8080/dashboard/
 	- Enter token > login
 	- tap on connect
 - TASKER: run task **WUZ - LinkWithPhoneNumber**
 	- a code will be copied to clipboard
-- Goto whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
+- Go to whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
 	- enter code from clipboard
 
 #### Termux
-- ctrl+c to kill session
-- prepare .env file
+- Ctrl+c to kill session
+- Prepare .env file
 	- add token and your timezone (e.g. Asia/Kolkata) in following text and copy it
 ```	
 WUZAPI_ADMIN_TOKEN=admin_token_generated_earlier_here
@@ -68,7 +68,7 @@ WEBHOOK_FORMAT=json
 - run `./wuzapi`
 
 #### Tasker
-- Goto app info > permissions > additional permissions > run commands in termux environment 
+- Go to app info > permissions > additional permissions > run commands in termux environment 
 - run task **WUZ - Connect**
 - run task **WUZ - Setup**
 
