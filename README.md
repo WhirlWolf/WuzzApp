@@ -68,7 +68,7 @@ WEBHOOK_FORMAT=json
 - run `./wuzapi`
 
 #### Tasker
-- Goto app info> permissions>additional permissions>run commands in termux environment 
+- Goto app info > permissions > additional permissions > run commands in termux environment 
 - run task **WUZ - Connect**
 - run task **WUZ - Setup**
 
