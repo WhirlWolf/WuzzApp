@@ -6,7 +6,7 @@ Control WhatsApp using Tasker.
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
 ## Setup Instructions
-#### Termux
+### Termux
 - Install from fdroid
 - Open and allow notification permission if asked
 - Run `apt update && apt upgrade`
@@ -34,7 +34,7 @@ termux-reload-settings
 
 - [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
 
-#### Link device
+### Link device
 - Go to http://localhost:8080/dashboard/
 	- Enter token > login
 	- tap on connect
@@ -43,7 +43,7 @@ termux-reload-settings
 - Go to whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
 	- enter code from clipboard
 
-#### Termux
+### Termux
 - Ctrl+c to kill session
 - Prepare .env file
 	- add token and your timezone (e.g. Asia/Kolkata) in following text and copy it
@@ -67,7 +67,7 @@ WEBHOOK_FORMAT=json
 	- ctrl+o to save > enter, ctrl+x to exit
 - Run `./wuzapi`
 
-#### Tasker
+### Tasker
 - Go to app info > permissions > additional permissions > run commands in termux environment 
 - Run task **WUZ - Connect**
 - Run task **WUZ - Setup**
@@ -79,3 +79,11 @@ WEBHOOK_FORMAT=json
 ALL DONE!
 
 Internet consumption (may vary): ~500mb
+
+## Features
+- Get status alerts
+- Get message read alerts
+- Get chatpresense alerts
+- Sync high quality profile pictures with device contacts
+- Send text message without opening app
+- Check if a contact is a whatsapp user
