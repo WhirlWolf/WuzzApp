@@ -58,19 +58,19 @@ TZ=timezone_here
 
 WEBHOOK_FORMAT=json
 ```
-- run `mv .env.sample .env`
-- run `nano .env`
+- Run `mv .env.sample .env`
+- Run `nano .env`
 	- do Alt + A   (start select)
 		then Alt + /   (go to end)
 		then Ctrl + K  (cut all)
 	- paste text copied in previous step (.env)
 	- ctrl+o to save > enter, ctrl+x to exit
-- run `./wuzapi`
+- Run `./wuzapi`
 
 #### Tasker
 - Go to app info > permissions > additional permissions > run commands in termux environment 
-- run task **WUZ - Connect**
-- run task **WUZ - Setup**
+- Run task **WUZ - Connect**
+- Run task **WUZ - Setup**
 
 > Make sure termux & tasker are allowed to run in background
 
