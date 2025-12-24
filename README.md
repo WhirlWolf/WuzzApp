@@ -34,7 +34,7 @@ termux-reload-settings
 
 - Import project
 
-#### WuzAPI setup
+#### Link device
  - goto http://localhost:8080/dashboard/
 	- Enter token > login
 	- tap on connect
@@ -43,7 +43,7 @@ termux-reload-settings
 - Goto whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
 	- enter code from clipboard
 
-#### Setup Termux
+#### Termux
 - ctrl+c to kill session
 - prepare .env file
 	- add token and your timezone (e.g. Asia/Kolkata) in following text and copy it
