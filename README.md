@@ -72,9 +72,9 @@ WEBHOOK_FORMAT=json
 - run task **WUZ - Connect**
 - run task **WUZ - Setup**
 
-> Make sure Termux & Tasker are allowed to run in background
+> Make sure termux & tasker are allowed to run in background
 
-> Increase maximum tasks queued in Tasker > preferences > action (depending on your WhatsApp activity)
+> Increase maximum tasks queued in Tasker > preferences > action (depending on your whatsapp activity)
 
 ALL DONE!
 
