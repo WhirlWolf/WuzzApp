@@ -32,7 +32,7 @@ termux-reload-settings
 	- save token (required later)
 - Run `./wuzapi` 
 
-- Import project
+- [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
 
 #### Link device
  - goto http://localhost:8080/dashboard/
