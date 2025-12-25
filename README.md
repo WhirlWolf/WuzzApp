@@ -1,6 +1,8 @@
 # WuzzApp
 Control WhatsApp using Tasker.
 
+Uses [WuzAPI](https://github.com/asternic/wuzapi)
+
 ## Warning
 This project is for educational and experimental purposes only. Misuse may violate WhatsApp’s terms of service and could result in account restrictions or bans. Use at your own risk; the author is not responsible for any damage, data loss, or account issues arising from its use.
 
