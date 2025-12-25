@@ -95,3 +95,5 @@ Internet consumption (may vary): ~500mb
 
 ## Tips
 - Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
+- Tap on composing flash alert to go to respective person's chat
+- Tap "Aquire wakelock" in termux notification if your os is not allowing termux to run reliably in background
