@@ -92,3 +92,6 @@ Internet consumption (may vary): ~500mb
 - Sync high quality profile pictures with device contacts
 - Send text message without opening app
 - Check if a contact is a whatsapp user
+
+## Tips
+- Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
