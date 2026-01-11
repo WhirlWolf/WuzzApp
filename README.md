@@ -56,7 +56,7 @@ termux-reload-settings
 ```	
 WUZAPI_ADMIN_TOKEN=admin_token_generated_earlier_here
 
-SESSION_DEVICE_NAME=WuzAPI
+SESSION_DEVICE_NAME=macOS
 
 WUZAPI_PORT=8080
 
