@@ -63,6 +63,10 @@ WUZAPI_PORT=8080
 TZ=timezone_here
 
 WEBHOOK_FORMAT=json
+
+WEBHOOK_RETRY_ENABLED=true
+WEBHOOK_RETRY_COUNT=1
+WEBHOOK_RETRY_DELAY_SECONDS=30
 ```
 - Run `cp .env.sample .env`
 - Run `nano .env`
@@ -86,13 +90,30 @@ ALL DONE!
 
 Internet consumption (may vary): ~500mb
 
+## Updating
+### Termux
+- Run `pkill ./wuzapi` to kill any existing wuzapi session
+- Run
+```
+cd wuzapi
+
+git pull
+
+go get -u go.mau.fi/whatsmeow@latest
+go mod tidy
+
+go build
+./wuzapi
+```
+
 ## Features
 - Get status alerts
-- Get message read alerts
-- Get chatpresense alerts
+- Get read receipt alerts
+- Get typing alerts
 - Sync high quality profile pictures with device contacts
-- Send text message without opening app
+- Send text message
 - Check if a contact is a whatsapp user
+- [Updater](https://t.me/android_automation/163) support
 
 ## Tips
 - Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
