@@ -27,7 +27,7 @@ termux-reload-settings
 - Run `cd wuzapi`
 - Run `go build`
 - Run `./wuzapi`
-	- Copy and save generated admin token (32 characters; required later)
+	- Copy and save generated admin token, global encryption key and global hmac key (32 characters; required later)
 	- ctrl+c to stop server
 - Run
   ```
@@ -52,9 +52,12 @@ termux-reload-settings
 ### Termux
 - Ctrl+c to kill session
 - Prepare .env file
-	- add token and your timezone (e.g. Asia/Kolkata) in following text and copy it
+	- add token, global encryption key, global hmac key and your timezone (e.g. Asia/Kolkata) in following text and copy it
+> Admin token, global encryption key and global hmac key can be any 32 characters string if you know what you are doing! It is recommended to use previously saved (generated) credentials.
 ```	
 WUZAPI_ADMIN_TOKEN=admin_token_generated_earlier_here
+WUZAPI_GLOBAL_ENCRYPTION_KEY=global_encryption_key_generated_earlier_here
+WUZAPI_GLOBAL_HMAC_KEY=global_hmac_key_generated_earlier_here
 
 SESSION_DEVICE_NAME=macOS
 
