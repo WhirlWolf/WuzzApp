@@ -120,3 +120,4 @@ go build
 - Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
 - Tap on composing flash alert to go to composer's chat
 - Tap "Aquire wakelock" in termux notification if termux or server doesn't run reliably in background
+- To get colored logs, kill the server, start new server using `./wuzapi -logtype json `
