@@ -85,13 +85,9 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
 - Run task **WUZ - Connect**
 - Run task **WUZ - Setup**
 
-> Make sure termux & tasker are allowed to run in background
-
-> Increase maximum tasks queued in Tasker > preferences > action (depending on your whatsapp activity)
-
 ALL DONE!
 
-Internet consumption (may vary): ~500mb
+Internet required: 500mb (may vary)
 
 ## Updating
 ### Termux
@@ -119,6 +115,8 @@ go build
 - [Updater](https://t.me/android_automation/163) support
 
 ## Tips
+- Make sure termux & tasker are allowed to run in background
+- Increase maximum tasks queued in tasker > preferences > action (depending on your whatsapp activity)
 - Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
 - Tap on composing flash alert to go to composer's chat
 - Tap "Aquire wakelock" in termux notification if termux or server doesn't run reliably in background
