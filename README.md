@@ -91,9 +91,10 @@ Internet required: 500mb (may vary)
 
 ## Updating
 ### Termux
-- Run `pkill ./wuzapi` to kill any existing wuzapi session
 - Run
 ```
+pkill ./wuzapi
+
 cd wuzapi
 
 git pull
