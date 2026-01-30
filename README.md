@@ -12,17 +12,16 @@ This project is for educational and experimental purposes only. Misuse may viola
 
 ## Setup Instructions
 ### Step1: Termux
-- Install from fdroid
+- [Download](https://f-droid.org/repo/com.termux_1022.apk) and install
 - Open and allow notification permission if asked
-- Run `apt update && apt upgrade`
-	- follow with 'y'
+- Run `apt update && apt upgrade` and follow with 'y'
 - Run `apt install git golang sqlite -y`
 - Run
 ```
 sed -i '/^#\s*allow-external-apps\s*=\s*true/s/^#\s*//' ~/.termux/termux.properties
 termux-reload-settings
 ```
-- Run `termux-setup-storage` > give permission
+- Run `termux-setup-storage` > allow permission
 - Run `git clone https://github.com/asternic/wuzapi`
 - Run `cd wuzapi`
 - Run `go build`
@@ -53,7 +52,7 @@ termux-reload-settings
 - Ctrl+c to kill session
 - Prepare .env file
 	- add token, global encryption key, global hmac key and your timezone (e.g. Asia/Kolkata) in following text and copy it
-> Admin token, global encryption key and global hmac key can be any 32 characters string if you know what you are doing! It is recommended to use previously saved (generated) credentials.
+> Admin token, global encryption key and global hmac key can be any 32 characters string but it is recommended to use previously saved (generated) credentials.
 ```	
 WUZAPI_ADMIN_TOKEN=admin_token_generated_earlier_here
 WUZAPI_GLOBAL_ENCRYPTION_KEY=global_encryption_key_generated_earlier_here
@@ -87,7 +86,7 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
 
 ALL DONE!
 
-Internet required: 500mb (may vary)
+> Internet consumption ~ 500mb
 
 ## Updating
 - To update library, run following code in termux
@@ -109,7 +108,7 @@ go build
 - Get status alerts
 - Get read receipt alerts
 - Get typing alerts
-- Sync high quality profile pictures with device contacts
+- Sync high quality profile pictures to device contacts
 - Send text message
 - Check if a contact is a whatsapp user
 - [Updater](https://t.me/android_automation/163) support
@@ -119,5 +118,5 @@ go build
 - Increase maximum tasks queued in tasker > preferences > action (depending on your whatsapp activity)
 - Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
 - Tap on composing flash alert to go to composer's chat
-- Tap "Aquire wakelock" in termux notification if termux or server doesn't run reliably in background
+- Tap 'Aquire wakelock' in termux notification if termux or server doesn't run reliably in background
 - To get colored logs, kill the server, start new server using `./wuzapi -logtype json `
