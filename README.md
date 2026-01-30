@@ -11,7 +11,7 @@ This project is for educational and experimental purposes only. Misuse may viola
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
 ## Setup Instructions
-### Termux
+### Step1: Termux
 - Install from fdroid
 - Open and allow notification permission if asked
 - Run `apt update && apt upgrade`
@@ -39,7 +39,7 @@ termux-reload-settings
 
 - [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
 
-### Link device
+### Step 2: Link device
 - Go to http://localhost:8080/dashboard/
 	- Enter token > login
 	- tap on connect
@@ -49,7 +49,7 @@ termux-reload-settings
 - Go to whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
 	- enter code from clipboard
 
-### Termux
+### Step 3: Termux
 - Ctrl+c to kill session
 - Prepare .env file
 	- add token, global encryption key, global hmac key and your timezone (e.g. Asia/Kolkata) in following text and copy it
@@ -80,7 +80,7 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
 	- ctrl+o to save > enter, ctrl+x to exit
 - Run `./wuzapi`
 
-### Tasker
+### Step 4: Tasker
 - Go to app info > permissions > additional permissions > run commands in termux environment 
 - Run task **WUZ - Connect**
 - Run task **WUZ - Setup**
@@ -90,8 +90,7 @@ ALL DONE!
 Internet required: 500mb (may vary)
 
 ## Updating
-### Termux
-- Run
+- To update library, run following code in termux
 ```
 pkill ./wuzapi
 
