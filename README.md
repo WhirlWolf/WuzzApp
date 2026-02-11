@@ -89,7 +89,7 @@ ALL DONE!
 > Internet consumption ~ 500mb
 
 ## Updating
-- To update library, run following code in termux
+- Updating library
 ```
 pkill ./wuzapi
 
