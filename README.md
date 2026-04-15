@@ -4,17 +4,17 @@ Control WhatsApp using Tasker.
 Uses [WuzAPI](https://github.com/asternic/wuzapi)
 
 ## Warning
->This project is created for educational and experimental purposes only and is provided “as is.”
-
->It is not affiliated with WhatsApp. Any use that breaches WhatsApp’s Terms of Service is solely the user’s responsibility and may result in account restrictions or bans. The author expressly disclaims all liability for account bans, data loss, or any consequential damages.
-
->Proceed at your own risk.
+- This project is **not affiliated with WhatsApp**.
+- You are responsible for how you use it.
+- Use responsibly to avoid account issues.
+- Proceed at your own risk.
 
 ## Prerequisites
 - [Termux](https://f-droid.org/repo/com.termux_1022.apk)
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
 ## Setup Instructions
+> Internet consumption ~ 500MB
 ### Step1: Termux
 - [Download](https://f-droid.org/repo/com.termux_1022.apk) and install
 - Open and allow notification permission if asked
@@ -88,12 +88,11 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
 - Run task **WUZ - Connect**
 - Run task **WUZ - Setup**
 
-ALL DONE!
+Setup Complete!
 
-> Internet consumption ~ 500mb
 
 ## Updating
-- Updating library
+### Library (Termux)
 ```
 pkill ./wuzapi
 
@@ -121,6 +120,20 @@ go build
 - Embedded triggers
 - Automatic triggers
 - Go to Chat
+
+### Privacy
+- WuzzApp does not collect or send your personal data anywhere by default.
+- In short:  **Your data stays yours unless you choose otherwise.**
+
+### Safety
+- Avoid creating aggressive or spam-like automations.
+- Don’t expose your server to the public internet without protection.
+- Never share your:
+  - Encryption keys
+  - Token
+  - Webhook URL
+  - `.env` file
+- If something gets exposed, **regenerate it immediately**.
 
 ## FAQ
 
@@ -176,3 +189,13 @@ Stop the server, then restart it using:
 ./wuzapi -logtype json
 ```
 </details>
+
+## Contributing
+Found a bug or have a feature request?
+[Open an issue](https://github.com/WhirlWolf/WuzzApp/issues)
+
+---
+
+<a href="https://ko-fi.com/whirlwolf" target="_blank">
+  <img src="https://cdn.ko-fi.com/cdn/kofi2.png?v=3" alt="Buy Me a Coffee" width="150"/>
+</a>
