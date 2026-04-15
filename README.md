@@ -4,7 +4,11 @@ Control WhatsApp using Tasker.
 Uses [WuzAPI](https://github.com/asternic/wuzapi)
 
 ## Warning
-This project is for educational and experimental purposes only. Misuse may violate WhatsApp’s terms of service and could result in account restrictions or bans. Use at your own risk; the author is not responsible for any damage, data loss, or account issues arising from its use.
+>This project is created for educational and experimental purposes only and is provided “as is.”
+
+>It is not affiliated with WhatsApp. Any use that breaches WhatsApp’s Terms of Service is solely the user’s responsibility and may result in account restrictions or bans. The author expressly disclaims all liability for account bans, data loss, or any consequential damages.
+
+>Proceed at your own risk.
 
 ## Prerequisites
 - [Termux](https://f-droid.org/repo/com.termux_1022.apk)
@@ -112,12 +116,63 @@ go build
 - Sync high quality profile pictures to device contacts
 - Send text message
 - Check if a contact is a whatsapp user
-- [Updater](https://t.me/android_automation/163) support
+- [Updater](https://github.com/WhirlWolf/Updater) support
+- Alert types
+- Embedded triggers
+- Automatic triggers
+- Go to Chat
 
-## Tips
-- Make sure termux & tasker are allowed to run in background
-- Increase maximum tasks queued in tasker > preferences > action (depending on your whatsapp activity)
-- Your status will be shown "online" as long as you are connected to the server, you may want to change this in whatsapp > settings > privacy > last seen and online
-- Tap on composing flash alert to go to composer's chat
-- Tap 'Aquire wakelock' in termux notification if termux or server doesn't run reliably in background
-- To get colored logs, kill the server, start new server using `./wuzapi -logtype json `
+## FAQ
+
+<details>
+<summary><strong>Why is WuzzApp not working reliably in the background?</strong></summary>
+
+Ensure both **Termux** and **Tasker** are allowed to run in the background and are not restricted by battery optimization settings.
+
+</details>
+
+<details>
+<summary><strong>Some automations are not triggering or are delayed. What should I do?</strong></summary>
+
+Increase the maximum task queue in Tasker:
+
+**Tasker → Preferences → Action → Max Tasks Queued**
+
+Adjust based on your WhatsApp activity.
+
+</details>
+
+<details>
+<summary><strong>Why does my WhatsApp show me as “online” frequently?</strong></summary>
+
+Your status may appear “online” as long as you are connected to the server.
+
+Change this in:
+
+**WhatsApp → Settings → Privacy → Last Seen & Online**
+
+</details>
+
+<details>
+<summary><strong>What happens when I tap on a “composing” flash alert?</strong></summary>
+
+It opens the chat of the person who is typing.
+
+</details>
+
+<details>
+<summary><strong>Termux/server stops running in the background. How to fix it?</strong></summary>
+
+Tap **“Acquire wakelock”** in the Termux notification to improve background reliability.
+
+</details>
+
+<details>
+<summary><strong>How can I enable colored logs?</strong></summary>
+
+Stop the server, then restart it using:
+
+```bash
+./wuzapi -logtype json
+```
+</details>
