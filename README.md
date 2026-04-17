@@ -4,15 +4,13 @@ WhatsApp mod-level features, Tasker-level control. React to real-time events and
 Uses [WuzAPI](https://github.com/asternic/wuzapi).
 
 ## Disclaimer
-- This project is **not affiliated with WhatsApp**.
-- You are responsible for how you use it.
-- Use responsibly to avoid account issues.
-- Proceed at your own risk.
+
+This project is **not affiliated with WhatsApp**. Use it responsibly and at your own risk — you are solely responsible for how you use it and any consequences that may follow, including account restrictions or bans.
 
 ## Prerequisites
+
 - [Termux](https://f-droid.org/repo/com.termux_1022.apk)
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
-
 
 ## Setup Instructions
 > [!NOTE]
@@ -77,20 +75,25 @@ Uses [WuzAPI](https://github.com/asternic/wuzapi).
   > WhatsApp may notify you directly to connect — follow the prompt if it appears
 
 ### Step 3: Termux
-- Ctrl+c to kill session
-- Prepare .env file
-	- add token, global encryption key, global hmac key and your timezone (e.g. Asia/Kolkata) in following text and copy it
-> Admin token, global encryption key and global hmac key can be any 32 characters string but it is recommended to use previously saved (generated) credentials.
-```	
-WUZAPI_ADMIN_TOKEN=admin_token_generated_earlier_here
-WUZAPI_GLOBAL_ENCRYPTION_KEY=global_encryption_key_generated_earlier_here
-WUZAPI_GLOBAL_HMAC_KEY=global_hmac_key_generated_earlier_here
+
+1. Press `Ctrl+C` to stop the server
+2. Copy the sample env file
+    ```
+    cp .env.sample .env
+    ```
+4. Fill in your credentials and timezone in the block below, then copy it
+
+  > [!NOTE]
+  > The admin token, global encryption key, and global HMAC key can be any 32-character string, but it's recommended to use the ones generated earlier
+```
+WUZAPI_ADMIN_TOKEN=your_admin_token_here
+WUZAPI_GLOBAL_ENCRYPTION_KEY=your_encryption_key_here
+WUZAPI_GLOBAL_HMAC_KEY=your_hmac_key_here
 
 SESSION_DEVICE_NAME=macOS
-
 WUZAPI_PORT=8080
 
-TZ=timezone_here
+TZ=your_timezone_here
 
 WEBHOOK_FORMAT=json
 
@@ -98,80 +101,97 @@ WEBHOOK_RETRY_ENABLED=true
 WEBHOOK_RETRY_COUNT=1
 WEBHOOK_RETRY_DELAY_SECONDS=30
 ```
-- Run `cp .env.sample .env`
-- Run `nano .env`
-	- do Alt + A   (start select)
-		then Alt + /   (go to end)
-		then Ctrl + K  (cut all)
-	- paste text copied in previous step (.env)
-	- ctrl+o to save > enter, ctrl+x to exit
-- Run `./wuzapi`
+   > Timezone format example: `Asia/Kolkata`
+
+4. Open the env file
+    ```
+    nano .env
+    ```
+5. Select and delete all existing content
+    - `Alt+A` — start selection
+    - `Alt+/` — jump to end
+    - `Ctrl+K` — cut everything
+6. Paste the filled block from step 3
+7. Save and exit
+    - `Ctrl+O` → `Enter` to save
+    - `Ctrl+X` to exit
+8. Start the server
+    ```
+    ./wuzapi
+    ```
 
 ### Step 4: Tasker
-- Go to app info > permissions > additional permissions > run commands in termux environment 
-- Run task **WUZ - Connect**
-- Run task **WUZ - Setup**
 
-Setup Complete!
+1. Go to Tasker's **App Info → Permissions → Additional Permissions** and enable **Run commands in Termux environment**
+2. Run the **WUZ - Connect** task
+3. Run the **WUZ - Setup** task
+
+---
+
+🎉 **Setup Complete!**
 
 
 ## Updating
+
 ### Library (Termux)
+
 ```
 pkill ./wuzapi
-
 cd wuzapi
-
 git pull
-
 go get -u go.mau.fi/whatsmeow@latest
 go mod tidy
-
 go build
 ./wuzapi
-
 ```
+
 ### Project (Tasker)
-[Import](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp) from Taskernet > run setup task (existing setup will be erased).
+
+[Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp) from Taskernet, then run the **WUZ - Setup** task.
+
+> [!WARNING]
+> Updating the project will erase your existing setup.
 
 ## Features
 
-### Real-Time Alerts
+#### Real-Time Alerts
 - **Status alerts** — get notified when a contact posts or updates their status
 - **Read receipt alerts** — know the moment your message is seen
 - **Typing alerts** — trigger actions as soon as someone starts typing
 
-### Contacts
+#### Contacts
 - **Profile picture sync** — automatically pull high-quality profile pictures into your device contacts
 - **WhatsApp user check** — verify whether a phone number is on WhatsApp
 
-### Messaging
+#### Messaging
 - **Send text messages** — send WhatsApp messages directly
 - **Go to Chat** — jump straight into a conversation from any trigger or task
 
-### Automation
+#### Automation
 - **Embedded triggers** — fire tasks directly from within alert
 - **Automatic triggers** — let WuzzApp kick off tasks on its own based on WhatsApp events
 - **Multiple alert types** — choose how and when you get notified
 
-### General
+#### General
 - **[Updater](https://github.com/WhirlWolf/Updater) support** — stay up to date automatically
 
 ## Privacy
-- WuzzApp does not collect or send your personal data anywhere by default.
-- In short:  **Your data stays yours unless you choose otherwise.**
+
+WuzzApp itself does not collect or transmit any personal data.
+
+**Your data stays yours unless you set up otherwise.**
 
 ## Safety
-- Avoid creating aggressive or spam-like automations.
-- Don’t expose your server to the public internet without protection.
-- Never share your:
-  - Encryption keys
-  - Token
-  - Webhook URL
-  - `.env` file
-- If something gets exposed, **regenerate it immediately**.
 
-> Some actions can trigger infinite loops if misused. For e.g., using **Send Text Message** inside a **Message Delivered** trigger will cause it to fire itself repeatedly. Use with caution until built-in anti-loop protection is added in a future update.
+> [!CAUTION]
+> Avoid creating aggressive or spam-like automations — WhatsApp may ban your number.
+
+> [!WARNING]
+> Some actions can cause infinite loops if misused. For example, using **Send Text Message** inside a **Message Delivered** trigger will cause it to fire itself repeatedly. Use with caution until built-in anti-loop protection is added in a future update.
+
+- Never expose your server to the public internet without proper protection
+- Never share your encryption keys, tokens, webhook URL, or `.env` file
+- If anything gets compromised, **regenerate it immediately**
 
 ## FAQ
 
@@ -235,10 +255,14 @@ Open Tasker's running tasks notification and stop the task from there. If that d
 </details>
 
 ## Contributing
-Found a bug or have a feature request?
-[Open an issue](https://github.com/WhirlWolf/WuzzApp/issues)
+
+Found a bug or have a feature request? [Open an issue](https://github.com/WhirlWolf/WuzzApp/issues) — all feedback is welcome.
 
 ---
+
+## Support the Project
+
+If you find WuzzApp useful, consider buying me a coffee!
 
 <a href="https://ko-fi.com/whirlwolf" target="_blank">
   <img src="https://cdn.ko-fi.com/cdn/kofi2.png?v=3" alt="Buy Me a Coffee" width="150"/>
