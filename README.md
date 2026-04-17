@@ -154,25 +154,25 @@ go build
 
 ## Features
 
-#### Real-Time Alerts
+### Real-Time Alerts
 - **Status alerts** — get notified when a contact posts or updates their status
 - **Read receipt alerts** — know the moment your message is seen
 - **Typing alerts** — trigger actions as soon as someone starts typing
 
-#### Contacts
+### Contacts
 - **Profile picture sync** — automatically pull high-quality profile pictures into your device contacts
 - **WhatsApp user check** — verify whether a phone number is on WhatsApp
 
-#### Messaging
+### Messaging
 - **Send text messages** — send WhatsApp messages directly
 - **Go to Chat** — jump straight into a conversation from any trigger or task
 
-#### Automation
+### Automation
 - **Embedded triggers** — fire tasks directly from within alert
 - **Automatic triggers** — let WuzzApp kick off tasks on its own based on WhatsApp events
 - **Multiple alert types** — choose how and when you get notified
 
-#### General
+### General
 - **[Updater](https://github.com/WhirlWolf/Updater) support** — stay up to date automatically
 
 ## Privacy
