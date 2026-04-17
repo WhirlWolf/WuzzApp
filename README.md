@@ -1,9 +1,9 @@
 # WuzzApp
-Control WhatsApp using Tasker.
+WhatsApp mod-level features, Tasker-level control. React to real-time events and automate anything.
 
-Uses [WuzAPI](https://github.com/asternic/wuzapi)
+Uses [WuzAPI](https://github.com/asternic/wuzapi).
 
-## Warning
+## Disclaimer
 - This project is **not affiliated with WhatsApp**.
 - You are responsible for how you use it.
 - Use responsibly to avoid account issues.
@@ -13,44 +13,68 @@ Uses [WuzAPI](https://github.com/asternic/wuzapi)
 - [Termux](https://f-droid.org/repo/com.termux_1022.apk)
 - [Tasker](https://play.google.com/store/apps/details?id=net.dinglisch.android.taskerm)
 
+
 ## Setup Instructions
+> [!NOTE]
 > Internet consumption ~ 500MB
-### Step1: Termux
-- [Download](https://f-droid.org/repo/com.termux_1022.apk) and install
-- Open and allow notification permission if asked
-- Run `apt update && apt upgrade` and follow with 'y'
-- Run `apt install git golang sqlite -y`
-- Run
-```
-sed -i '/^#\s*allow-external-apps\s*=\s*true/s/^#\s*//' ~/.termux/termux.properties
-termux-reload-settings
-```
-- Run `termux-setup-storage` > allow permission
-- Run `git clone https://github.com/asternic/wuzapi`
-- Run `cd wuzapi`
-- Run `go build`
-- Run `./wuzapi`
-	- Copy and save generated admin token, global encryption key and global hmac key (32 characters; required later)
-	- ctrl+c to stop server
-- Run
-  ```
-  sqlite3 dbdata/users.db "insert into users ('id','name','token') values ('whirlwolf','WhirlWolf','whirlwolf')"
-  ```
-	- values can be anything you want
-	- save token (required later)
-- Run `./wuzapi` 
 
-- [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
+### Step 1: Termux
 
-### Step 2: Link device
-- Go to http://localhost:8080/dashboard/
-	- Enter token > login
-	- tap on connect
-> Above step may not be required in newer versions
-- TASKER: run task **WUZ - LinkWithPhoneNumber**
-	- a code will be copied to clipboard
-- Go to whatsapp > link device > link with phone number (usually whatsapp notifies directly to connect)
-	- enter code from clipboard
+1. [Download and install Termux](https://f-droid.org/repo/com.termux_1022.apk)
+2. Open Termux and allow notification permission if asked
+3. Update packages and enter `y` when prompted
+    ```
+    apt update && apt upgrade
+    ```
+4. Install dependencies
+    ```
+    apt install git golang sqlite -y
+    ```
+5. Allow external apps to interact with Termux
+    ```
+    sed -i '/^#\s*allow-external-apps\s*=\s*true/s/^#\s*//' ~/.termux/termux.properties
+    termux-reload-settings
+    ```
+6. Grant storage permission and allow when prompted
+    ```
+    termux-setup-storage
+    ```
+7. Clone and build the server
+    ```
+    git clone https://github.com/asternic/wuzapi
+    cd wuzapi
+    go build
+    ./wuzapi
+    ```
+  >[!IMPORTANT]
+  > Copy and save the generated **admin token**, **global encryption key**, and **global HMAC key** — you'll need them later.
+    
+    Press `Ctrl+C` to stop the server once done
+
+8. Create a user — `id`, `name`, and `token` can be anything you want. Save the token for later
+    ```
+    sqlite3 dbdata/users.db "insert into users ('id','name','token') values ('whirlwolf','WhirlWolf','whirlwolf')"
+    ```
+9. Start the server
+    ```
+    ./wuzapi
+    ```
+10. [Import project in Tasker](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp)
+
+### Step 2: Link Device
+
+1. Open http://localhost:8080/dashboard/ in your browser
+2. Enter your token and log in
+3. Tap **Connect**
+
+ > [!NOTE]
+ > This step may not be required in newer versions
+
+4. In Tasker, run the **WUZ - LinkWithPhoneNumber** task — a code will be copied to your clipboard
+5. In WhatsApp, go to **Link Device → Link with Phone Number** and enter the code from your clipboard
+
+  > [!TIP]
+  > WhatsApp may notify you directly to connect — follow the prompt if it appears
 
 ### Step 3: Termux
 - Ctrl+c to kill session
@@ -107,25 +131,37 @@ go build
 ./wuzapi
 
 ```
+### Project (Tasker)
+[Import](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp) from Taskernet > run setup task (existing setup will be erased).
 
 ## Features
-- Get status alerts
-- Get read receipt alerts
-- Get typing alerts
-- Sync high quality profile pictures to device contacts
-- Send text message
-- Check if a contact is a whatsapp user
-- [Updater](https://github.com/WhirlWolf/Updater) support
-- Alert types
-- Embedded triggers
-- Automatic triggers
-- Go to Chat
 
-### Privacy
+### Real-Time Alerts
+- **Status alerts** — get notified when a contact posts or updates their status
+- **Read receipt alerts** — know the moment your message is seen
+- **Typing alerts** — trigger actions as soon as someone starts typing
+
+### Contacts
+- **Profile picture sync** — automatically pull high-quality profile pictures into your device contacts
+- **WhatsApp user check** — verify whether a phone number is on WhatsApp
+
+### Messaging
+- **Send text messages** — send WhatsApp messages directly
+- **Go to Chat** — jump straight into a conversation from any trigger or task
+
+### Automation
+- **Embedded triggers** — fire tasks directly from within alert
+- **Automatic triggers** — let WuzzApp kick off tasks on its own based on WhatsApp events
+- **Multiple alert types** — choose how and when you get notified
+
+### General
+- **[Updater](https://github.com/WhirlWolf/Updater) support** — stay up to date automatically
+
+## Privacy
 - WuzzApp does not collect or send your personal data anywhere by default.
 - In short:  **Your data stays yours unless you choose otherwise.**
 
-### Safety
+## Safety
 - Avoid creating aggressive or spam-like automations.
 - Don’t expose your server to the public internet without protection.
 - Never share your:
@@ -134,6 +170,8 @@ go build
   - Webhook URL
   - `.env` file
 - If something gets exposed, **regenerate it immediately**.
+
+> Some actions can trigger infinite loops if misused. For e.g., using **Send Text Message** inside a **Message Delivered** trigger will cause it to fire itself repeatedly. Use with caution until built-in anti-loop protection is added in a future update.
 
 ## FAQ
 
@@ -188,6 +226,12 @@ Stop the server, then restart it using:
 ```bash
 ./wuzapi -logtype json
 ```
+</details>
+<details>
+<summary><strong>What should I do if I get stuck in a loop?</strong></summary>
+
+Open Tasker's running tasks notification and stop the task from there. If that doesn't work, force stop Tasker or reboot your device.
+
 </details>
 
 ## Contributing
