@@ -66,7 +66,7 @@ This project is **not affiliated with WhatsApp**. Use it responsibly and at your
 3. Tap **Connect**
 
  > [!NOTE]
- > This step may not be required in newer versions
+ > Above 3 steps may not be required in newer versions
 
 4. In Tasker, run the **WUZ - LinkWithPhoneNumber** task — a code will be copied to your clipboard
 5. In WhatsApp, go to **Link Device → Link with Phone Number** and enter the code from your clipboard
