@@ -150,7 +150,7 @@ go build
 [Import project](https://taskernet.com/shares/?user=AS35m8m8L9YzBV3qbzaAAqHiSYXYBbD3QfZ7hr0hRK4ojOFTCrjWh2CScbjMw4NaudRi1zKKzq85&id=Project%3AWuzzApp) from Taskernet, then run the **WUZ - Setup** task.
 
 > [!WARNING]
-> Updating the project will erase your existing setup.
+> Updating the project will erase your existing setup (tasker project only).
 
 ## Features
 
