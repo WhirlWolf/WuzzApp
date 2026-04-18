@@ -143,6 +143,7 @@ go get -u go.mau.fi/whatsmeow@latest
 go mod tidy
 go build
 ./wuzapi
+
 ```
 
 ### Project (Tasker)
