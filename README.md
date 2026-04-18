@@ -143,7 +143,6 @@ go get -u go.mau.fi/whatsmeow@latest
 go mod tidy
 go build
 ./wuzapi
-
 ```
 
 ### Project (Tasker)
@@ -226,9 +225,9 @@ Change this in:
 </details>
 
 <details>
-<summary><strong>What happens when I tap on a “composing” flash alert?</strong></summary>
+<summary><strong>Why does tapping a "composing" flash alert open the person's chat?</strong></summary>
 
-It opens the chat of the person who is typing.
+It opens the chat of the person who is typing as set by default. Update this in Event Preferences.
 
 </details>
 
