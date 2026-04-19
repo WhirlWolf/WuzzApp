@@ -200,6 +200,8 @@ WuzzApp itself does not collect or transmit any personal data.
 
 Ensure both **Termux** and **Tasker** are allowed to run in the background and are not restricted by battery optimization settings.
 
+Steps vary by manufacturer — visit dontkillmyapp.com and select your device brand for exact instructions.
+
 </details>
 
 <details>
