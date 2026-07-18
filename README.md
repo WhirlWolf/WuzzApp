@@ -5,7 +5,7 @@ Uses [WuzAPI](https://github.com/asternic/wuzapi).
 
 ## Disclaimer
 
-This project is **not affiliated with WhatsApp**. Use it responsibly and at your own risk — you are solely responsible for how you use it and any consequences that may follow, including account restrictions or bans.
+This project is **not** affiliated with WhatsApp. Use it responsibly and at your own risk. You are solely responsible for how you use it and for any consequences that may result, including account restrictions, suspensions, or permanent bans.
 
 ## Prerequisites
 
