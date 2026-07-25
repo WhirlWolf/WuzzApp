@@ -13,7 +13,7 @@ This project is **not affiliated with WhatsApp**. Use it responsibly and at your
 - [Getting Started](docs/getting-started.md)
 - [User Guide](docs/user-guide.md)
 - [Event Preferences](docs/event-preferences.md)
-- [Configuration Reference](docs/configuration.md)
+- [Configuration](docs/configuration.md)
 - [Updating](docs/updating.md)
 - [Troubleshooting](docs/troubleshooting.md)
 - [FAQ](docs/faq.md)
