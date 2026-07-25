@@ -61,7 +61,7 @@ If you want to remove WuzzApp entirely (e.g. before a device change, or to start
 
 1. **Unlink WhatsApp first**, while the server is still running — run the **WUZ - Logout** task, or unlink the device manually from WhatsApp's **Linked Devices** screen. Doing this before removing anything else avoids leaving a stale linked device in your WhatsApp account.
 2. **Regenerate/revoke tokens** — since `WUZAPI_ADMIN_TOKEN`, the encryption key, and the HMAC key won't be usable once you delete the server, there's nothing further to revoke, but stop the server (`Ctrl+C` or `pkill ./wuzapi`) before deleting files so nothing writes to the database mid-delete.
-3. **Remove the wuzapi install (skip this step because of dangerous command, an accidental tap will literally delete everything in your device including your OS)** — in Termux: `rm -rf ~/wuzapi` (or wherever you cloned it) deletes the server, its `.env` file, and its local `dbdata/users.db`.
+3. **Remove the wuzapi install (SKIP THIS STEP because of dangerous command, an accidental tap will literally delete everything in your device including your OS)** — in Termux: `rm -rf ~/wuzapi` (or wherever you cloned it) deletes the server, its `.env` file, and its local `dbdata/users.db`.
 4. **Remove the Tasker project** — in Tasker, long-press the **WuzzApp** project and delete (with contents) it. This also removes your Event Preferences, since they're stored as a Tasker variable scoped to the project.
 5. **Uninstall Termux/Tasker** (optional) — only needed if you're not using them for anything else.
 
