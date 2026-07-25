@@ -66,4 +66,6 @@ Found a bug or have a feature request? [Open an issue](https://github.com/WhirlW
 
 If you find WuzzApp useful, donate to keep it updated!
 
-[![Buy Me a Coffee](https://camo.githubusercontent.com/2df914a0101385fd5196ed05218772a0e5f8211fd309ee00367069b730a06b7d/68747470733a2f2f63646e2e6b6f2d66692e636f6d2f63646e2f6b6f6669322e706e673f763d33)](https://ko-fi.com/whirlwolf)
+<a href="https://ko-fi.com/whirlwolf" target="_blank">
+  <img src="https://cdn.ko-fi.com/cdn/kofi2.png?v=3" alt="Keep Wuzzapp Alive" width="150"/>
+</a>
