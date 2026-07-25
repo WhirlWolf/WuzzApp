@@ -4,6 +4,10 @@ Mod-level WhatsApp features. Tasker-level automation. React to anything, automat
 
 Uses [WuzAPI](https://github.com/asternic/wuzapi).
 
+### Description
+
+WuzzApp lets you control WhatsApp using Tasker (an Android automation app) — so you can build custom automations tied to WhatsApp activity, reacting to things like messages, status updates, or typing in real time and triggering actions on your phone automatically.
+
 ## Disclaimer
 
 This project is **not affiliated with WhatsApp**. Use it responsibly and at your own risk — you are solely responsible for how you use it and any consequences that may follow, including account restrictions or bans.
