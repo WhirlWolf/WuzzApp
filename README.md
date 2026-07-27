@@ -64,6 +64,10 @@ See the full [FAQ](docs/faq.md) and [Troubleshooting](docs/troubleshooting.md) g
 
 Found a bug or have a feature request? [Open an issue](https://github.com/WhirlWolf/WuzzApp/issues) — all feedback is welcome.
 
+## Acknowledgement
+
+- @coder-sage - tests and assistance
+
 ---
 
 ## Support the Project
