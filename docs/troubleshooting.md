@@ -2,48 +2,42 @@
 
 ## Background reliability
 
-**Symptom:** WuzzApp works fine when you're using your phone, but alerts/triggers stop after a while in your pocket.
+**Symptom:** works while you use the phone, stops in your pocket.
 
-This is almost always Android killing Termux or Tasker to save battery.
+Android is killing Termux or Tasker.
 
-1. Make sure both **Termux** and **Tasker** are excluded from battery optimization and allowed to run in the background.
-2. Steps vary a lot by phone manufacturer (Xiaomi, Samsung, OnePlus, etc. all have their own aggressive battery managers) — visit [dontkillmyapp.com](https://dontkillmyapp.com) and follow the instructions for your specific device.
-3. In Termux's persistent notification, tap **Acquire wakelock** — this keeps the CPU from sleeping while the server needs to run.
+1. Exclude **Termux** and **Tasker** from battery optimization.
+2. Follow your phone's steps at [dontkillmyapp.com](https://dontkillmyapp.com).
+3. In Termux's notification, tap **Acquire wakelock**.
 
-## Automations not firing, or firing late
+## Automations not firing or firing late
 
-Tasker has a cap on how many tasks can be queued at once. If you have a busy chat, events can back up.
+Tasker caps queued tasks, and busy chats can back up. Raise **Tasker → Preferences → Action → Max Tasks Queued**.
 
-**Tasker → Preferences → Action → Max Tasks Queued** — increase this value based on how much WhatsApp activity you get.
+## WhatsApp shows me "online" a lot
 
-## WhatsApp shows you as "online" a lot
+Expected while connected. Change it in **WhatsApp → Settings → Privacy → Last Seen & Online**.
 
-This is expected — WhatsApp shows you as online for as long as your device is actively connected to the server (which needs to happen for WuzzApp to receive events). If this bothers you, change:
+## Tapping an alert doesn't open the chat
 
-**WhatsApp → Settings → Privacy → Last Seen & Online**
-
-## Tapping a "composing" alert doesn't open the chat
-
-Nothing is wired to alert taps by default anymore — this is expected. See [Event Preferences → Interactions](event-preferences.md#interactions) to wire it up yourself.
+Nothing is wired to taps by default. See [Event Preferences → Interactions](event-preferences.md#interactions).
 
 ## Stuck in a loop of alerts or messages
 
-This usually means an **automatic** trigger is re-triggering itself — e.g. a "Send Text Message" task wired to a "Message Delivered" trigger will keep sending, since each send delivers, which fires the trigger again.
+An automatic trigger is re-triggering itself. For example, **Send Text Message** on **Message Delivered** sends, which delivers, which sends again.
 
-**To stop it immediately:**
-1. Open Tasker's running-tasks notification and stop the offending task from there.
-2. If that doesn't work, force-stop Tasker from Android's app settings.
-3. As a last resort, reboot the device.
+**Stop it:**
+1. Stop the task from Tasker's running-tasks notification.
+2. Otherwise force-stop Tasker in Android settings.
+3. Last resort: reboot.
 
-**To prevent it happening again:** see [Safety & Privacy → Avoiding a WhatsApp ban](safety-and-privacy.md#avoiding-a-whatsapp-ban), which covers the same loop risk and how to design around it.
+**Prevent it:** [Safety & Privacy](safety-and-privacy.md#avoiding-a-whatsapp-ban).
 
-## Server won't start / port already in use
+## Server won't start / port in use
 
-If `./wuzapi` fails to start, another process may already be using the port (default `8080`). Either stop that process, or change `WUZAPI_PORT` in `.env` (see [Configuration](configuration.md)) and restart.
+Stop the other process, or change `WUZAPI_PORT` in `.env` ([Configuration](configuration.md)) and restart.
 
-## Enabling colored / structured logs
-
-Stop the server and restart with:
+## Colored / structured logs
 
 ```
 ./wuzapi -logtype json
@@ -51,26 +45,24 @@ Stop the server and restart with:
 
 ## Linking fails or times out
 
-- Make sure the server is running and reachable at `http://localhost:8080/dashboard/` before running **WUZ - LinkWithPhoneNumber**/**WUZ - Project Setup**.
-- Codes expire quickly — if WhatsApp rejects the code, re-run the task to generate a fresh one.
-- If you're re-linking after a **Logout**, this is expected — logout fully unlinks the device.
+- Make sure the dashboard opens at `http://localhost:8080/dashboard/` first.
+- Codes expire fast. Re-run the task for a fresh one.
+- After a **Logout** you must relink. This is normal.
 
-## Uninstalling / fully resetting WuzzApp
+## Uninstall or reset
 
-If you want to remove WuzzApp entirely (e.g. before a device change, or to start over cleanly):
+1. **Unlink first** while the server runs: run **WUZ - Logout** or remove the device in WhatsApp's **Linked Devices**.
+2. Stop the server (`Ctrl+C` or `pkill ./wuzapi`).
+3. Delete the `wuzapi` folder with a file manager. Avoid `rm -rf` in Termux; a typo can wipe your device. This removes the server, `.env` and `dbdata/`.
+4. In Tasker, long-press the **WuzzApp** project and delete it with contents. This also removes your Event Preferences.
+5. Optionally uninstall Termux and Tasker.
 
-1. **Unlink WhatsApp first**, while the server is still running — run the **WUZ - Logout** task, or unlink the device manually from WhatsApp's **Linked Devices** screen. Doing this before removing anything else avoids leaving a stale linked device in your WhatsApp account.
-2. **Regenerate/revoke tokens** — since `WUZAPI_ADMIN_TOKEN`, the encryption key, and the HMAC key won't be usable once you delete the server, there's nothing further to revoke, but stop the server (`Ctrl+C` or `pkill ./wuzapi`) before deleting files so nothing writes to the database mid-delete.
-3. **Remove the wuzapi install (SKIP THIS STEP because of dangerous command, an accidental tap will literally delete everything in your device including your OS)** — in Termux: `rm -rf ~/wuzapi` (or wherever you cloned it) deletes the server, its `.env` file, and its local `dbdata/users.db`.
-4. **Remove the Tasker project** — in Tasker, long-press the **WuzzApp** project and delete (with contents) it. This also removes your Event Preferences, since they're stored as a Tasker variable scoped to the project.
-5. **Uninstall Termux/Tasker** (optional) — only needed if you're not using them for anything else.
-
-If you only want to **start over** rather than fully uninstall, you can skip steps 3–5 and instead: run **WUZ - Logout**, delete `dbdata/users.db` to clear old users, restart the server, and follow [Getting Started](getting-started.md) from Step 1.7 (creating a user) onward.
+**To start over instead:** run **WUZ - Logout**, stop the server, delete `dbdata/main.db` (clears all users and sessions), then redo [Getting Started](getting-started.md) from Step 1.7.
 
 ## Still stuck?
 
 [Open an issue](https://github.com/WhirlWolf/WuzzApp/issues) with:
-- What step you're on
-- The exact error/behavior
-- Your Termux and Tasker versions
+- The step you're on
+- The exact error
+- Termux and Tasker versions
 - Project version and build number
