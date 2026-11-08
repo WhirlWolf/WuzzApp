@@ -8,25 +8,14 @@ Built on [WuzAPI](https://github.com/asternic/wuzapi).
 
 This project is **not affiliated with WhatsApp**. Use it responsibly and at your own risk — you are solely responsible for how you use it and any consequences that may follow, including account restrictions or bans.
 
-## 📖 Documentation
-
-- [Getting Started](docs/getting-started.md)
-- [User Guide](docs/user-guide.md)
-- [Event Preferences](docs/event-preferences.md)
-- [Configuration](docs/configuration.md)
-- [Updating](docs/updating.md)
-- [Troubleshooting](docs/troubleshooting.md)
-- [FAQ](docs/faq.md)
-- [Safety & Privacy](docs/safety-and-privacy.md)
-
-**Where to start:**
+## Docs
 
 | If you're... | Read |
 |---|---|
-| Installing | [Getting Started](docs/getting-started.md) → [Configuration Reference](docs/configuration.md) |
-| Setting up alerts/automations | [User Guide](docs/user-guide.md) → [Event Preferences](docs/event-preferences.md) |
-| Upgrading | [Event Preferences Changelog](docs/event-preferences-changelog.md) → [Updating](docs/updating.md) |
-| Stuck | [Troubleshooting](docs/troubleshooting.md) → [FAQ](docs/faq.md) |
+| Installing | [Getting Started](docs/getting-started.md), [Configuration](docs/configuration.md) |
+| Setting up alerts | [User Guide](docs/user-guide.md), [Event Preferences](docs/event-preferences.md) |
+| Updating | [Updating](docs/updating.md) |
+| Stuck | [Troubleshooting](docs/troubleshooting.md), [FAQ](docs/faq.md) |
 | Worried about bans or tokens | [Safety & Privacy](docs/safety-and-privacy.md) |
 
 
@@ -39,10 +28,6 @@ This project is **not affiliated with WhatsApp**. Use it responsibly and at your
 - **Updates:** via [Updater](https://github.com/WhirlWolf/Updater)
 
 See the [User Guide](docs/user-guide.md) for details on every feature.
-
-## Updating
-
-The wuzapi library (Termux) and the Tasker project update independently. See **[Updating](docs/updating.md)** for the commands and steps — including the warning about re-importing the project erasing your existing Tasker-side setup.
 
 ## Privacy
 
