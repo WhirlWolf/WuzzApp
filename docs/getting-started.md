@@ -2,15 +2,10 @@
 
 Takes about 20-30 minutes and ~500MB of data (mostly the Go toolchain).
 
-**Three parts:**
-
 | Part | What it does | Runs in |
 |---|---|---|
 | **wuzapi** | WhatsApp connection server | Termux |
 | **Tasker project** | Reacts to events, sends alerts, runs your tasks | Tasker |
-| **Event Preferences UI** | Per-event alert settings | Inside the project |
-
-Everything runs on your phone. Nothing leaves it unless you add a webhook.
 
 ## Prerequisites
 
