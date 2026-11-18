@@ -1,6 +1,6 @@
 # Getting Started
 
-Takes about 20-30 minutes and ~500MB of data (mostly the Go toolchain).
+Takes about 20-30 minutes and ~500MB of data.
 
 | Part | What it does | Runs in |
 |---|---|---|
