@@ -40,10 +40,10 @@ Takes about 20-30 minutes and ~500MB of data.
    cp .env.sample .env
    nano .env
    ```
-   .env file will be shown, use following button combinations to edit the file:
+   .env file will be shown, use following button combinations to clear the contents:
    `Alt+A`, `Alt+/`, `Ctrl+K`.
 
-7. Copy and fill following code with your keys (tip: use password generator) and your timezone (e.g. `Asia/Kolkata`).
+7. Copy and edit following code with your keys (tip: use password generator) and your timezone (e.g. `Asia/Kolkata`).
 ```
 # .env
 # Server Configuration
