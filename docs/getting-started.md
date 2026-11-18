@@ -130,6 +130,8 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
 1. Go to **Tasker → App Info → Permissions → Additional Permissions** and enable **Run commands in Termux environment**.
 2. Run **WUZ - Project Setup** to register the webhook.
 
-🎉 Done. Next: [User Guide](user-guide.md) or [Event Preferences](event-preferences.md).
+🎉 Done. 
+
+Next: [User Guide](user-guide.md) or [Event Preferences](event-preferences.md).
 
 Android may kill Termux in the background: see [Background reliability](troubleshooting.md#background-reliability).
