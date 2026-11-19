@@ -104,14 +104,20 @@ WEBHOOK_RETRY_DELAY_SECONDS=30
    
 8. Paste the code, save with `Ctrl+O`, `Enter`, then exit with `Ctrl+X`.
 
-9. Create WhatsApp user. `id`, `name` and `token` can be anything, just remember the token:
+9. Start and stop the server to initialize the db:
+   ```
+   ./wuzapi
+   ```
+then `Ctrl+C`
+
+10. Create WhatsApp user. `id`, `name` and `token` can be anything, just remember the token:
    ```
    sqlite3 dbdata/main.db "insert into users ('id','name','token') values ('whirlwolf','WhirlWolf','whirlwolf')"
    ```
    >
-   > Alternative: start the server (step 10) , open `http://localhost:8080/dashboard/` in browser, log in as admin with the **admin token** you entered in .env file and tap **Add Instance**.
+   > Alternative: don't stop server (step 9) , open `http://localhost:8080/dashboard/` in browser, log in as admin with the **admin token** you entered in .env file and tap **Add Instance**.
 
-10. Start the server:
+11. Start the server again:
    ```
    ./wuzapi
    ```
