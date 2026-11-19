@@ -131,7 +131,7 @@ then `Ctrl+C`
 5. In Tasker, run **WUZ - Project Setup**. It copies a linking code.
 6. In WhatsApp, tap on menu (elipsis button) > Linked devices > Link a device > Link with phone number instead > Enter code copied to clipboard (You may also get a prompt in WhatsApp; follow that instead.)
 
-## Step 4 — Finish setup in Tasker
+## Step 3 — Finish setup in Tasker
 
 1. Go to **Tasker → App Info → Permissions → Additional Permissions** and enable **Run commands in Termux environment**.
 2. Run **WUZ - Project Setup** to register the webhook.
