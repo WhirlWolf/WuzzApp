@@ -77,7 +77,7 @@ WUZAPI_MEDIA_CONCURRENCY=2
 # WuzAPI Session Configuration
 SESSION_DEVICE_NAME=macOS
 # "available" (legacy default) or "unavailable" (preserves phone push notifications)
-WUZAPI_AUTO_PRESENCE=unavailable
+WUZAPI_AUTO_PRESENCE=available
 
 # Trim on every Nth saved message per user and chat (default 1, every message)
 WUZAPI_HISTORY_TRIM_INTERVAL=1
