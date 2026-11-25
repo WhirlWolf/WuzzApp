@@ -9,6 +9,14 @@ Built on [WuzAPI](https://github.com/asternic/wuzapi).
 This project is **not affiliated with WhatsApp**. Use it responsibly and at your own risk — you are solely responsible for how you use it and any consequences that may follow, including account restrictions or bans.
 
 ## Docs
+- [Getting Started](docs/getting-started.md)
+- [Configuration](docs/configuration.md)
+- [User Guide](docs/user-guide.md)
+- [Event Preferences](docs/event-preferences.md)
+- [Updating](docs/updating.md)
+- [Troubleshooting](docs/troubleshooting.md)
+- [FAQ](docs/faq.md)
+- [Safety & Privacy](docs/safety-and-privacy.md)
 
 | If you're... | Read |
 |---|---|
