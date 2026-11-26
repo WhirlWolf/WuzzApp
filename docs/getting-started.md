@@ -75,6 +75,7 @@ WUZAPI_MEDIA_CONCURRENCY=2
 # WUZAPI_MEDIA_TMPDIR=/var/lib/wuzapi/media
 
 # WuzAPI Session Configuration
+# Linked device name
 SESSION_DEVICE_NAME=macOS
 # "available" (legacy default) or "unavailable" (preserves phone push notifications)
 WUZAPI_AUTO_PRESENCE=available
@@ -84,6 +85,7 @@ WUZAPI_HISTORY_TRIM_INTERVAL=1
 # When every proxy pool entry is full: "block" (default, refuse to connect) or "direct" (connect without a proxy)
 WUZAPI_PROXY_POOL_FALLBACK=block
 
+# Timezone
 TZ=Asia/Kolkata
 
 # Minimum WuzAPI log level. Empty preserves legacy verbosity; separate from -wadebug.
